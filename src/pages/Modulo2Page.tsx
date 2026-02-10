@@ -66,14 +66,13 @@ export const Modulo2Page = ({initial=0,step=1}:ContadorProps) => {
         alert(resultado.mensaje);
     };
     const maquinaCafe:MaquinaCafe ={modelo:"Kame-500",aguaMax:2000};
+// Intersecciones
 
-
-
-
-
-
-
-
+    type A = {nombre:string};
+    type B = {edad:string};
+    type C = {sexo?: "female" | "male"};
+    type Persona = A & B & C;
+    const juanObject :  Persona = {nombre:"Juan",edad:"30", sexo:"male"};
     return (
         <main className="min-h-screen bg-neutral-950 text-neutral-100 flex flex-col p-4 gap-4">
             <p>Cafetera - Modulo 2</p>
@@ -95,6 +94,9 @@ export const Modulo2Page = ({initial=0,step=1}:ContadorProps) => {
             <p className="min-w-1/3 text-center text-2xl font-semibold">{count}</p>
             <button onClick={inc} className="bg-gray-700 text-black rounded-2xl hover:bg-gray-400 border">+</button>
             <button onClick={dec} className="bg-gray-700 text-black rounded-2xl hover:bg-gray-400 border">-</button>
+            <br/>
+            <h2>Intersecciones</h2>
+            <pre> {JSON.stringify(juanObject,null,2)}</pre>
         </main>
     );
 };
