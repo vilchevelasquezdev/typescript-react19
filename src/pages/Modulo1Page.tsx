@@ -1,6 +1,5 @@
 import {calcularDanio} from "../utils/Tools.ts";
 import {Link} from "react-router-dom";
-import {HomePage} from "./HomePage.tsx";
 
 export const Modulo1Page = () => {
 
@@ -29,10 +28,9 @@ export const Modulo1Page = () => {
     }
 
     // null o undefined
-    let transformacion:string | null =null;
-    transformacion = "Super Saiyan";
-    let estrategia:string | undefined = undefined;
-    estrategia = "Transformarce a ultra instinto";
+    const transformacion:string | null =null;
+    const estrategia:string | undefined = undefined;
+
 
     return (
         <main className="min-h-screen bg-neutral-950 text-neutral-100 antialiased">
@@ -82,6 +80,15 @@ export const Modulo1Page = () => {
                       <p>Habilidad 2 (base 500 x 2)</p>
                       <span>{calcularDanioFlecha(500,2)}</span>
 
+                  </div>
+              </section>
+              <section className="mb-8">
+                  <h2 className="text-xl font-medium text-blue-300 mb-2">
+                      null y undefine
+                  </h2>
+                  <div>
+                      <p>Transformacion (null) {transformacion}</p>
+                      <p>Estrategia (undefine) {estrategia}</p>
                   </div>
               </section>
           </div>
