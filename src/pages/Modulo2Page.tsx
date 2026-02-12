@@ -1,5 +1,6 @@
 import {type CafePreparadoI, type MaquinaCafe, peleaOK, type RecetaAzucar} from "../interfaces/Modulo2Interface.ts";
 import {useState} from "react";
+import {Link} from "react-router-dom";
 /*---------------------------- contador ---------------------*/
 type ContadorProps = {
     initial?: number;
@@ -75,28 +76,54 @@ export const Modulo2Page = ({initial=0,step=1}:ContadorProps) => {
     const juanObject :  Persona = {nombre:"Juan",edad:"30", sexo:"male"};
     return (
         <main className="min-h-screen bg-neutral-950 text-neutral-100 flex flex-col p-4 gap-4">
-            <p>Cafetera - Modulo 2</p>
-            <p>Modelo: {maquinaCafe.modelo}. Capacidad Maxima: {maquinaCafe.aguaMax}cc</p>
-            <button className="bg-blue-600 text-white rounded-2xl" onClick={onCafe}>Hacer cafe con Type</button>
-            <div>
-                <span>Inteface</span>
-                <ul>
-                    <li>Arena: {peleaOK.arena}</li>
-                    <li>Ki: {peleaOK.ki}</li>
-                </ul>
+            <div className="mx-auto max-w-3xl p-8">
+                <header className="mb-8 border-neutral-800 pb-4">
+                    <Link to="/" className="px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white rounded-lg shadow-md">
+                        ⬅️
+                    </Link>
+                    <h1 className="text-3xl font-semibold text-blue-500 mt-5">
+                        React + TypeScript 🔰 Modulo 2
+                    </h1>
+                    <p className="text-sm text-neutral-400">
+                        Fundamentos: type, Interface y uso de useState con tipado. Uniones Literales e intersecciones.
+                    </p>
+                </header>
+                <section className="mb-8">
+                    <h2 className="text-xl font-medium text-blue-300 mb-2">
+                        Inferencias y básicos
+                    </h2>
+
+                </section>
+                <p>Cafetera - Modulo 2</p>
+                <p>Modelo: {maquinaCafe.modelo}. Capacidad Maxima: {maquinaCafe.aguaMax}cc</p>
+                <button className="bg-blue-600 text-white rounded-2xl px-3 py-2 gap-2" onClick={onCafe}>Hacer cafe con Type</button>
+                <div>
+                    <span>Inteface</span>
+                    <ul>
+                        <li>Arena: {peleaOK.arena}</li>
+                        <li>Ki: {peleaOK.ki}</li>
+                    </ul>
+                </div>
+                <button className="bg-amber-950 text-white rounded-2xl px-3 py-2 gap-2" onClick={onCafeI}>Hacer cafe con Interface</button>
+                <br/>
+                <section className="mb-8">
+                    <span> State tipados:  {intesidadUI}</span>
+                    <br/>
+                    <button className="bg-cyan-900 text-white rounded-2xl px-3 py-2 gap-2" onClick={()=>setIntesidadUI("Fuerte")}>Cambiar State</button>
+                </section>
+                <section>
+                    <span className="min-w-1/3 text-center text-2xl font-semibold"> Contador </span>
+                    <p className="min-w-1/3 px-5 py-2 text-2xl font-semibold">{count}</p>
+                    <button onClick={inc} className="bg-gray-700 text-black rounded-2xl px-3 py-2 hover:bg-gray-400 border">+</button>
+                    <button onClick={dec} className="bg-gray-700 text-black rounded-2xl px-3 py-2 hover:bg-gray-400 border">-</button>
+                </section>
+
+
+                <br/>
+                <h2>Intersecciones</h2>
+                <pre> {JSON.stringify(juanObject,null,2)}</pre>
             </div>
-            <button className="bg-amber-950 text-white rounded-2xl" onClick={onCafeI}>Hacer cafe con Interface</button>
-            <br/>
-            <span> State tipados</span>
-            {intesidadUI}
-            <button className="bg-cyan-900 text-white rounded-2xl" onClick={()=>setIntesidadUI("Fuerte")}>Cambiar State</button>
-            <span className="min-w-1/3 text-center text-2xl font-semibold"> Contador </span>
-            <p className="min-w-1/3 text-center text-2xl font-semibold">{count}</p>
-            <button onClick={inc} className="bg-gray-700 text-black rounded-2xl hover:bg-gray-400 border">+</button>
-            <button onClick={dec} className="bg-gray-700 text-black rounded-2xl hover:bg-gray-400 border">-</button>
-            <br/>
-            <h2>Intersecciones</h2>
-            <pre> {JSON.stringify(juanObject,null,2)}</pre>
+
         </main>
     );
 };

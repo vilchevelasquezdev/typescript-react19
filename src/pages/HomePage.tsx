@@ -4,14 +4,25 @@ export const HomePage = () => {
     const modules =[{
         id: 1,
         title: 'Home',
-        description: "Introdduccion a TypeScript em React",
+        description: "Introduccion a TypeScript em React",
         path: "/modulo1"
     },{
         id: 2,
         title: 'Props y Estado',
         description: "Props opcionales, defauly y useState tipado",
         path: "/modulo2"
+    },{
+        id: 3,
+        title: 'Eventos y Formularios',
+        description: "ChangeEvent, submit y formularios controlados.",
+        path: "/modulo3"
+    },{
+        id: 4,
+        title: 'Hooks y Custom Hooks',
+        description: "Uso de useEffect: Construyendo un temporizador y llamadas a PokeApi con useFetch",
+        path: "/modulo4"
     }];
+
 
 
     return (
@@ -29,7 +40,7 @@ export const HomePage = () => {
                     {modules.map((module) => (
                         <Link to={module.path} key={module.id} className="group block rounded-xl border border-neutral-800 bg-neutral-900/60 px-5 py-4 transition hover:border-blue-500/40 hover:bg-neutral-900">
                             <div className="flex items-center justify-between gap-3">
-                                <span className="text-[10px] tracking-widest uppercase text-neutral-500">{module.title}
+                                <span className="text-[10px] tracking-widest uppercase text-neutral-500">{module.title} -
                                     Modulo
                                 </span>
                                 <h2 className="mt-1 text-lg font-medium text-neutral-100">
