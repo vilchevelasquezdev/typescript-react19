@@ -21,6 +21,11 @@ export const HomePage = () => {
         title: 'Hooks y Custom Hooks',
         description: "Uso de useEffect: Construyendo un temporizador y llamadas a PokeApi con useFetch",
         path: "/modulo4"
+    },{
+        id: 5,
+        title: 'Componentes Avanzados',
+        description: "Children, componentes genericos y refs.",
+        path: "/modulo5"
     }];
 
 
