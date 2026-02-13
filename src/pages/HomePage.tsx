@@ -26,6 +26,17 @@ export const HomePage = () => {
         title: 'Componentes Avanzados',
         description: "Children, componentes genericos y refs.",
         path: "/modulo5"
+    },{
+        id: 6,
+        title: 'Zustand',
+        description: "store.",
+        path: "/modulo6"
+    },
+    {
+        id: 7,
+        title: 'Proyecto 1',
+        description: "Crearemos una Pokedex.",
+        path: "/modulo7"
     }];
 
 
@@ -46,7 +57,7 @@ export const HomePage = () => {
                         <Link to={module.path} key={module.id} className="group block rounded-xl border border-neutral-800 bg-neutral-900/60 px-5 py-4 transition hover:border-blue-500/40 hover:bg-neutral-900">
                             <div className="flex items-center justify-between gap-3">
                                 <span className="text-[10px] tracking-widest uppercase text-neutral-500">{module.title} -
-                                    Modulo
+                                    Modulo {module.id}
                                 </span>
                                 <h2 className="mt-1 text-lg font-medium text-neutral-100">
                                     {module.title}
